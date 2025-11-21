@@ -1,73 +1,262 @@
-# React + TypeScript + Vite
+#Student Management UI – React + TypeScript
+Topic
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Student Management System UI built using React + TypeScript, featuring student listing, searching, and student creation via modal form.
 
-Currently, two official plugins are available:
+This project is part of the Frontend Intern – Task 01 assignment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
+✅ Core Features
 
-## React Compiler
+View list of students (loaded from mock data)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Search students by name (real-time filtering)
 
-## Expanding the ESLint configuration
+Add new student using a modal form
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Form validation (required fields, email validation)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Organized folder structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Fully typed using TypeScript
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+⭐ Optional Features Implemented (If Applicable)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Good UI spacing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Reusable component architecture
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Simple responsive behavior
+
+📸 Screenshots
+
+(Replace these with your actual images after running the project)
+
+![Students List Screenshot](./screenshots/students-list.png)
+![Add Student Modal](./screenshots/add-student-modal.png)
+
+⚡ Quickstart
+1. Clone the Repository
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+
+2. Install Dependencies
+npm install
+
+3. Run the Project
+npm run dev
+
+
+The project runs at:
+
+👉 http://localhost:5173
+
+📁 Project Structure
+src/
+ ├── components/
+ │    ├── CreateStudentModal.tsx
+ │    ├── SearchBar.tsx
+ │    └── StudentTable.tsx
+ │
+ ├── data/
+ │    └── students.ts
+ │
+ ├── types/
+ │    └── student.ts
+ │
+ ├── pages/
+ │    └── StudentsPage.tsx
+ │
+ ├── App.tsx
+ ├── main.tsx
+ └── index.css
+
+🧰 Tech Stack Used
+Frontend
+
+React (Vite)
+
+TypeScript
+
+HTML5 / CSS3
+
+Build Tools
+
+Vite
+
+ESBuild
+
+Package Management
+
+npm
+
+🧩 Component Architecture
+1. StudentsPage.tsx
+
+Main screen
+
+Holds state (students, searchTerm)
+
+Renders SearchBar, Add Student Modal, and StudentTable
+
+2. SearchBar.tsx
+
+Controlled input field
+
+Passes search value back to parent
+
+3. StudentTable.tsx
+
+Displays the student list in a table format
+
+Receives filtered data via props
+
+4. CreateStudentModal.tsx
+
+Modal component with form for creating new student
+
+Performs validation before submitting
+
+5. students.ts
+
+Mock data source
+
+6. student.ts
+
+TypeScript interface for strong typing
+
+📜 Available Scripts
+Command	Description
+npm run dev	Start development server
+npm run build	Create production build
+npm run preview	Preview production build
+npm install	Install dependencies
+🔍 Features Breakdown
+✔ Student Listing
+
+Loads initial data from data/students.ts
+
+Displays in table form
+
+Fully typed using Student interface
+
+✔ Search Function
+
+Case-insensitive name filtering
+
+Runs on every keystroke
+
+✔ Add Student Modal
+
+Opens on “+ Add Student”
+
+Validates:
+
+Name: required
+
+Email: required + proper email format
+
+Level: must be 4–7
+
+Adds student to list and closes modal
+
+🎨 Theme Customization (If You Want to Mention in README)
+
+Easy to adjust colors and spacing in index.css
+
+Component-level styles can be extended
+
+✔ Data Validation
+Name
+
+Required
+
+Email
+
+Required
+
+Pattern: test@example.com
+
+Level
+
+Allowed values: 4, 5, 6, 7
+
+Validation happens before adding a student.
+
+🔮 Future Enhancements
+
+Sorting: by name and level
+
+Delete student
+
+Edit student
+
+Save to localStorage
+
+Pagination for large lists
+
+Accessibility improvements
+
+Dark mode support
+
+⚡ Performance
+
+Very fast due to Vite + React + TypeScript
+
+State is kept minimal
+
+Functional components for lightweight rendering
+
+Only filtered list is re-rendered
+
+🌐 Browser Support
+Browser	Support
+Chrome	✅
+Firefox	✅
+Edge	✅
+Safari	✅
+
+(IE not supported – modern React project)
+
+👨‍💻 Author
+
+Mohamed Salman
+Frontend Intern – SimHealth AI
+
+🙏 Acknowledgment
+
+Thanks to SimHealth AI for providing the internship task and guidance.
+
+📚 Learning Resources
+
+React Docs: https://react.dev
+
+TypeScript Docs: https://www.typescriptlang.org
+
+Vite Docs: https://vitejs.dev
+
+MDN Web Docs: https://developer.mozilla.org
+
+🎯 Use Cases
+
+This project can be used for:
+
+Basic CRUD UI training
+
+React + TS component structuring practice
+
+Form handling and validation demos
+
+Searching and filtering example
+
+Building a real-world student admin interface
+
+⭐ Key Highlights
+
+Clean and modular folder structure
+
+Strong TypeScript typing
+
+Reusable UI components
+
+Beginner-friendly and scalable architecture
