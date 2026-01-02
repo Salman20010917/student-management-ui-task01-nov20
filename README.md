@@ -1,5 +1,5 @@
 ## **📘 Student Management UI – React + TypeScript**
-**Topic**
+**Topics**
 
 A simple Student Management System UI built using React + TypeScript, featuring student listing, searching, and student creation via modal form. This project is part of the Frontend Intern – Task 01 assignment.
 
